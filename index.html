@@ -8,6 +8,45 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
+                                                                /* Small mobile arrow below hero buttons */
+                                                                #hero-arrow-mobile {
+                                                                  display: none;
+                                                                }
+                                                                @media (max-width: 576px) {
+                                                                  #hero-arrow {
+                                                                    display: none !important;
+                                                                  }
+                                                                  #hero-arrow-mobile {
+                                                                    display: block;
+                                                                    text-align: center;
+                                                                    margin-top: 0.7rem;
+                                                                  }
+                                                                  #hero-arrow-mobile .bounce-arrow {
+                                                                    font-size: 1.5rem;
+                                                                  }
+                                                                }
+                                                            @media (max-width: 576px) {
+                                                              #hero-arrow {
+                                                                display: none !important;
+                                                              }
+                                                            }
+                                                        /* Space between hero buttons */
+                                                        .hero-btn-group {
+                                                          display: flex;
+                                                          flex-direction: row;
+                                                          justify-content: center;
+                                                          align-items: center;
+                                                          gap: 0.7rem;
+                                                        }
+                                                        @media (max-width: 576px) {
+                                                          .hero-btn-group {
+                                                            flex-direction: column;
+                                                            gap: 1.1rem;
+                                                          }
+                                                          #hero-arrow {
+                                                            bottom: 12px !important;
+                                                          }
+                                                        }
                                                     /* Project card image zoom on hover */
                                                     .project-card .card-img-top {
                                                       transition: transform 0.35s cubic-bezier(.23,1.01,.32,1);
@@ -129,17 +168,27 @@
       <h2 id="hero-role" class="mb-3 hero-animate" style="font-size:1.5rem; font-weight:700; opacity:0; transform:translateY(-30px);">Full-Stack Developer & Python Programmer</h2>
       <p id="hero-desc" class="lead mb-4 hero-animate" style="opacity:0; transform:translateY(-30px);">I build scalable, secure applications with Django, React and PostgreSQL.<br>Experienced with production deployments and real client projects.</p>
       <div class="mb-4">
-              <div id="hero-arrow" style="position:absolute;left:50%;bottom:32px;transform:translateX(-50%);z-index:10;">
-                <span class="bounce-arrow" style="display:inline-block;font-size:2.5rem;color:#686767;cursor:pointer;">
-                    <a href="#about" id="hero-arrow-link" style="text-decoration:none;">
-                      <span class="bounce-arrow" style="display:inline-block;font-size:2.5rem;color:#797474;cursor:pointer;">
-                        <i class="fas fa-chevron-down"></i>
-                      </span>
-                    </a>
-                </span>
-              </div>
-        <a id="hero-btn-contact" href="#contact" class="btn btn-primary btn-lg me-2 hero-animate" style="opacity:0; transform:translateY(-30px);">Get In Touch</a>
+      <div class="hero-btn-group">
+        <a id="hero-btn-contact" href="#contact" class="btn btn-primary btn-lg hero-animate" style="opacity:0; transform:translateY(-30px);">Get In Touch</a>
         <a id="hero-btn-resume" href="Sreerag.pdf" class="btn btn-outline-light btn-lg resume-btn hero-animate" download target="_blank" rel="noopener noreferrer" style="opacity:0; transform:translateY(-30px);">Download Resume</a>
+      </div>
+      <div id="hero-arrow" style="position:absolute;left:50%;bottom:32px;transform:translateX(-50%);z-index:10;">
+        <span class="bounce-arrow" style="display:inline-block;font-size:2.5rem;color:#686767;cursor:pointer;">
+          <a href="#about" id="hero-arrow-link" style="text-decoration:none;">
+            <span class="bounce-arrow" style="display:inline-block;font-size:2.5rem;color:#797474;cursor:pointer;">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </a>
+        </span>
+      </div>
+      <!-- Small arrow for mobile only -->
+      <div id="hero-arrow-mobile">
+        <a href="#about" id="hero-arrow-link-mobile" style="text-decoration:none;">
+          <span class="bounce-arrow" style="display:inline-block;color:#797474;cursor:pointer;">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+        </a>
+      </div>
       </div>
         <style>
           .resume-btn {
